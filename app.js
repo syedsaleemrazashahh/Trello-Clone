@@ -20,29 +20,32 @@ if (!savedTasks) {
 const addTask = (event) => {
   event.preventDefault();
 
-  const currentForm = event.target; // current form element
-  const value = currentForm.elements[0].value; // value written in form's input
-  const parent = currentForm.parentElement; // parent of form i.e div.column
+  const recentForm = event.target;
+  //   line number 23 recent form element k liye hai
+
+  const value = recentForm.elements[0].value; // value written in form's input
+  const parent = recentForm.parentElement; // parent of form i.e div.column
   const ticket = createTicket(value); // div to be added
 
-  parent.insertBefore(ticket, currentForm); // adding new task before the form
-
+  parent.insertBefore(ticket, recentForm);
+  //  ye line number 30 form se pehle task ko add karti hai
   const h3Value = parent.children[0].innerText;
 
   if (!Array.isArray(savedTasks[h3Value])) {
-    // agar array nhi hy tw khali array set karwa do kyu ky undefined ma .push() nhi ho sagta
+    // agar array nhi hy tw khali array b rakhna pare q k undefined ma .push() nhi ho sakhta
     savedTasks[h3Value] = [];
   }
 
   savedTasks[h3Value].push(value);
 
   localStorage.setItem("savedTasks", JSON.stringify(savedTasks)); // saving data after adding each task
-
-  currentForm.reset(); // clearing form
+  // ye line number 41 data ko save karti hai har task k baad
+  recentForm.reset();
+  // line number 43 form se reset karti hai
 };
 
 for (let i = 0; i < columns.length; i++) {
-  const form = columns[i].lastElementChild; // selecting every column's form because form is last element
-
+  const form = columns[i].lastElementChild;
+  //  line number 48 select karti hai har column k form ko  q k form last element hau
   form.addEventListener("submit", addTask);
 }
