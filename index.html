@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Document</title>
+    <title>Trello Clone</title>
   </head>
   <body>
     <header draggable="false">
@@ -13,19 +13,25 @@
 
     <main id="main">
       <div class="column">
-        <h3>Trello Clone</h3>
-
+        <h3>To Do</h3>
         <form>
           <input type="text" placeholder="Add task" />
         </form>
       </div>
       <div class="column">
-        <h3>Card</h3>
+        <h3>In Progress</h3>
         <form>
           <input type="text" placeholder="Add task" />
-          <script type="module" src="./app.js"></script>
+        </form>
+      </div>
+      <div class="column">
+        <h3>Done</h3>
+        <form>
+          <input type="text" placeholder="Add task" />
         </form>
       </div>
     </main>
+    <button id="add-column">Add Column</button>
+    <script type="module" src="./app.js"></script>
   </body>
 </html>
