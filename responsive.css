@@ -1,0 +1,31 @@
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .column {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 10px 0;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  .column {
+    padding: 5px;
+  }
+
+  form input[type="text"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  #add-column {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
